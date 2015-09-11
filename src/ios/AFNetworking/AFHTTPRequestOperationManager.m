@@ -207,6 +207,21 @@
     return operation;
 }
 
+- (AFHTTPRequestOperation *)OPTIONS:(NSString *)URLString
+                        parameters:(id)parameters
+                           success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                           failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"OPTIONS" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
+
+    [self.operationQueue addOperation:operation];
+
+    return operation;
+}
+
+
+
 #pragma mark - NSObject
 
 - (NSString *)description {
