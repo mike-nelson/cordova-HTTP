@@ -116,6 +116,18 @@
     return dataTask;
 }
 
+- (NSURLSessionDataTask *)OPTIONS:(NSString *)URLString
+                   parameters:(id)parameters
+                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:@"OPTIONS" URLString:URLString parameters:parameters success:success failure:failure];
+
+    [dataTask resume];
+
+    return dataTask;
+}
+
 - (NSURLSessionDataTask *)HEAD:(NSString *)URLString
                     parameters:(id)parameters
                        success:(void (^)(NSURLSessionDataTask *task))success
