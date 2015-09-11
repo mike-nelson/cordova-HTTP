@@ -112,7 +112,7 @@
    
    CordovaHttpPlugin* __weak weakSelf = self;
    manager.responseSerializer = [TextResponseSerializer serializer];
-   [manager OPTIONS:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   [manager dataTaskWithHTTPMethod URLString:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
       NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
       [dictionary setObject:[NSNumber numberWithInt:operation.response.statusCode] forKey:@"status"];
       [dictionary setObject:responseObject forKey:@"data"];
