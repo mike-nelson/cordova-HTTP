@@ -314,7 +314,7 @@
 
  @see -HTTPRequestOperationWithRequest:success:failure:
  */
-- (AFHTTPRequestOperation *)OPTION:(NSString *)URLString
+- (AFHTTPRequestOperation *)OPTIONS:(NSString *)URLString
                         parameters:(id)parameters
                            success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
