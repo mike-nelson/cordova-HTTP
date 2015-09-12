@@ -27,7 +27,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [HttpManager manager];
-        _sharedClient.responseSerializer.acceptableContentTypes = [_sharedClient.responseSerializer.acceptableContentTypes setByAddingObject:@"application/vnd.ms-sync.wbxml"]
+        _sharedClient.responseSerializer.acceptableContentTypes = [_sharedClient.responseSerializer.acceptableContentTypes setByAddingObject:@"application/vnd.ms-sync.wbxml"];
     });
     
     return _sharedClient;
